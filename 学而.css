@@ -18,11 +18,13 @@ body{
     justify-content: space-between;
     align-items: center;
     backdrop-filter: inherit;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .header nav{
     display: flex;
     gap: 30px;
+    height: 100%;
 }
 .option1{
     text-decoration: none;
@@ -30,6 +32,9 @@ body{
     color: rgb(91, 91, 91);
     cursor: pointer;
     position: relative;
+    width: 40px;
+    padding-top: 25px;
+    
 }
 .option2{
     text-decoration: none;
@@ -37,30 +42,18 @@ body{
     color: rgb(91, 91, 91);
     cursor: pointer;
     position: relative;
+    width: 80px;
+    padding-top: 25px;
 }
 .option1:hover{
     color: rgba(255, 0, 0, 0.568);
     font-weight: bold;
+    border-top: 5px solid  rgba(255, 0, 0, 0.568);
 }
 .option2:hover{
     color: rgba(255, 0, 0, 0.568);
     font-weight: bold;
-}
-.option1::before{
-    position: absolute;
-    content: "";
-    background-color: rgba(255, 0, 0, 0.772);
-    width: 40px;
-    height: 10px;
-    top: -27px;
-}
-.option2::before{
-    position: absolute;
-    content: "";
-    background-color: rgba(255, 0, 0, 0.774);
-    width: 80px;
-    height: 10px;
-    top: -27px;
+    border-top: 5px solid  rgba(255, 0, 0, 0.568);
 }
 header{
     display: flex;
@@ -92,6 +85,7 @@ header{
     width: 70px;
     height:31px;
     top: 24.75px;
+    cursor: pointer;
 }
 .back{
     width: 80px;
@@ -174,7 +168,7 @@ header{
     position: absolute;
     top: 320px;
     width: 800px;
-    height: 450px;
+    height: 458px;
 }
 .decoration1{
     width: 700px;
@@ -195,6 +189,11 @@ div{
     font-size: 40px;
     display: grid;
     place-content: center;
+    cursor: pointer;
+}
+div:hover{
+    background-color: rgba(86, 205, 179, 0.904) ;
+    color: white;
 }
 }
 .select1{
@@ -301,7 +300,6 @@ p{
     background-color: white;
     position: absolute;
     top: 1170px;
-    margin-bottom: 100px;
 }
 .container{
     width: 800px;
@@ -321,6 +319,7 @@ div{
     background-color: rgba(255, 0, 0, 0.514);
     display: grid;
     place-content: center;
+    cursor: pointer;
 p{
     color: white;
     text-align: center;
@@ -329,26 +328,33 @@ p{
 div:hover{
     background-color: rgba(247, 14, 14, 0.758);
 }
-}
-.cat{
-    position: relative;
-}
-.cat::before{
+div::before{
     position: absolute;
     content: "";
     background-image: url(cat.png);
-    width: 180px;
-    height: 48px;
+    width: 142.5px;
+    height: 50px;
     background-size: cover;
-    top: -48px ;
-    left: -30px;
+    top: 100px;
+    z-index:-1;
+    overflow: hidden;
+    transform-origin: bottom;
+    background-position: center center; /* 水平和垂直方向都居中 */
+    background-repeat: no-repeat; 
+    transition: all 0.4s ease-in-out;
+    transform: scaleY(0);
+}
+div:hover::before{
+    transform: scaleY(1);
+    z-index: 1000;
+}
 }
 footer{
     width:1200px;
     height: 100px;
     background-color: rgba(0, 0, 0, 0.783);
     position: absolute;
-    top: 1700px;
+    top: 1620px;
 }
 .copyright{
     width: 400px;
@@ -367,7 +373,7 @@ div{
 }
 .english{
     letter-spacing: 2px;
-    border-right:2px solid red ;
+    border-right:2px solid red;
 }
 }
 .copyright::before{
@@ -380,6 +386,6 @@ div{
     background-size: cover;
     position: absolute;
     top:-43px
-
 }
+
 
