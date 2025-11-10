@@ -105,62 +105,79 @@ header{
     top: 85px;
     z-index: 0;
 }
-.banner{
+.slider{
     width: 800px;
     height: 300px;
     overflow: hidden;
     position: relative;
 }
 .slides{
-    width: 1600px;
+    width: 4000px;
     height: 100%;
     display: flex;
-    animation: run 10s ease infinite;
-    animation-play-state: running;
-    flex-direction: row;
-    position: relative;
 }
-.slides:hover{
-    animation-play-state: paused;
+.slides input{
+    display: none;
 }
-.slides img:target { 
-    display: block; 
+.slide{
+    width: 20%;
+    transition: 2s;
 }
-.dots{ 
-    text-align: center;
-    top: 250px;
-    left: 380px;
+.slide img{
+    width:800px;
+    height: 300px;
+}
+.navigation-manual{
     position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
 }
-.dot1 {
-    display: inline-block;
-    width: 10px; height: 10px;
-    background: white; /* 默认灰色 */
-    margin: 0 5px;
-    text-decoration: none; /* 清除a标签下划线 */
-    border-radius: 50%;
-    animation: big1 5s ease infinite;
-    box-shadow: 0;
+.manual-btn{
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius:50%;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1;
 }
-.dot2 {
-    display: inline-block;
-    width: 10px; height: 10px;
-    background: white; /* 默认灰色 */
-    margin: 0 5px;
-    text-decoration: none; /* 清除a标签下划线 */
-    border-radius: 50%;
-    animation: big2 5s ease infinite;
-    box-shadow: 0;
+.manual-btn:not(:last-child){
+    margin-right: 40px;
 }
-@keyframes run{
-    0%,50%{transform: translateX(0);}
-    50%,100%{transform: translateX(-890px);}
+.manual-btn:hover{
+    background-color: gray;
 }
-@keyframes big1{
-    0%,50%{box-shadow: 2px solid gray;}
+#radio1:checked ~.first{
+    margin-left: 0;
 }
-@keyframes big2{
-    50%,100%{box-shadow: 2px solid gray;}
+#radio2:checked ~.first{
+    margin-left: -20%;
+}
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    height: 14px;
+    justify-content: center;
+    margin-top: 260px;
+}
+.navigation-auto div{
+    border:2px solid gray;
+    padding: 5px;
+    border-radius:50%;
+    transition: 1s;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.632);
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+#radio1:checked ~.navigation-auto div.auto-btn1{
+    background-color: gray;
+}
+#radio2:checked ~.navigation-auto div.auto-btn2{
+    background-color: gray;
 }
 .introduction{
     display: flex;
@@ -387,5 +404,3 @@ div{
     position: absolute;
     top:-43px
 }
-
-
