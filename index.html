@@ -23,17 +23,38 @@
         </div>
     </header>
     <div class="content">
-        <div class="banner">
+        <div class="slider">
             <div class="slides">
-                <img src="banner1.png" alt="banner1" id="slide1">
-                <img src="banner2.jpg" alt="banner2" id="slide2">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <div class="slide first">
+                    <img src="banner1.png" alt="">
+                </div>
+                <div class="slide ">
+                    <img src="banner2.jpg" alt="">
+                </div>
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                </div>
             </div>
-            <div class="dots">
-                <a href="#slide1" class="dot1"></a>
-                <a href="#slide2" class="dot2"></a>
-                <a href="#slide3" class="dot3"></a>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
             </div>
         </div>
+
+        <script type="text/javascript">
+            var counter = 1;
+            setInterval(function(){
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if(counter > 2){
+                    counter = 1;
+                }
+            },5000);
+        </script>
+
         <div class="introduction">
             <div class="decoration1">
                 <div>公</div>
